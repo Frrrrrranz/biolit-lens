@@ -1,0 +1,11 @@
+{
+  "name": "biolit-lens",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --dir frontend dev",
+    "build": "pnpm --dir frontend build",
+    "test": "pnpm --dir frontend test"
+  },
+  "packageManager": "pnpm@9.15.5"
+}
+
