@@ -21,10 +21,20 @@ uvicorn app.main:app --reload --port 8000
 
 ```powershell
 pnpm install
-pnpm dev
+pnpm --dir frontend dev
 ```
 
-Open http://localhost:5173. The frontend expects the API at `http://localhost:8000`; set `VITE_API_BASE_URL` to override it.
+Open http://localhost:5173. The frontend expects the API at `http://localhost:8000`; set `VITE_API_BASE_URL` in `frontend/.env.local` to override it.
+
+## Vercel demo
+
+The repository includes `vercel.json` for the Vite frontend. Import the repository into Vercel and keep the project root at the repository root. Set this environment variable in the Vercel project:
+
+```text
+VITE_API_BASE_URL=https://your-public-backend.example.com
+```
+
+The FastAPI backend must be deployed separately with a public HTTPS URL and CORS configured to allow the Vercel domain. A Vercel-hosted frontend cannot call a backend that only runs on your local `localhost:8000`.
 
 ## Data and methodology
 
@@ -34,6 +44,7 @@ Open http://localhost:5173. The frontend expects the API at `http://localhost:80
 - The influence score is `ln(1 + citationCount) / sqrt(max(ageInYears, 1))`; it is not Journal Impact Factor.
 - Geography means the first author's first affiliation when it can be identified; unknown values remain visible.
 - The default report is deterministic and works without an LLM key.
+- Ant Design supplies interaction-heavy components; the editorial layout, charts and topic cards retain the project's custom visual layer.
 
 See [docs/methodology.md](docs/methodology.md) for the detailed data contract and limitations.
 
