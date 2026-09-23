@@ -1,0 +1,20 @@
+.query-row input { min-width: 0; flex: 1; border: 0; outline: 0; background: transparent; color: var(--ink); font-size: 14px; }
+.query-row input::placeholder { color: #9aa69e; }
+.landing-submit, .landing-cta { border: 0; border-radius: 8px; background: var(--deep); color: #fff; cursor: pointer; font-size: 12px; font-weight: 600; transition: background .2s ease, transform .2s ease; }
+.landing-submit { min-height: 43px; padding: 0 18px; white-space: nowrap; }
+.landing-submit:hover, .landing-cta:hover { background: #16523d; }
+.landing-submit span, .landing-cta span { margin-left: 6px; font-size: 16px; font-weight: 400; }
+.landing-cta { padding: 11px 16px; }
+.workspace-shell { max-width: 1200px; margin: 0 auto; padding: 26px 0 44px; }
+.workspace-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 18px; min-height: 38px; margin-bottom: 22px; border-bottom: 1px solid var(--line); padding-bottom: 16px; }
+.workspace-back { border: 0; padding: 0; background: transparent; color: #3d7656; cursor: pointer; font: 11px var(--mono); }
+.workspace-query { min-width: 0; overflow: hidden; color: #819087; text-overflow: ellipsis; white-space: nowrap; font: 10px var(--mono); }
+.workspace-query strong { color: var(--ink); font-weight: 500; }
+.workspace-fallback { min-height: 65vh; }
+.fallback-header { padding: 52px 0 28px; }
+.fallback-header h1 { margin: 12px 0 8px; color: var(--deep); font-family: var(--display); font-size: 34px; font-weight: 500; }
+.fallback-header p { margin: 0; color: var(--muted); font-size: 13px; }
+.fallback-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.fallback-grid div { height: 170px; border: 1px solid var(--line); background: linear-gradient(100deg, #eef3ed 28%, #f8faf6 40%, #eef3ed 52%); background-size: 220% 100%; animation: fallback-shimmer 1.6s ease-in-out infinite; }
+@keyframes fallback-shimmer { from { background-position: 100% 0; } to { background-position: -100% 0; } }
+@media (max-width: 640px) { .workspace-shell { padding-top: 18px; }.workspace-toolbar { align-items: flex-start; flex-direction: column; gap: 9px; }.fallback-header { padding-top: 38px; }.fallback-grid { grid-template-columns: 1fr; }.fallback-grid div { height: 104px; } }
